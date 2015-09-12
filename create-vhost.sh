@@ -60,9 +60,11 @@ vhost="$vhost\t\tRequire all granted\n"
 vhost="$vhost\t</Directory>\n"
 vhost="$vhost</VirtualHost>"
 
-if [ -f vhost.conf ]; then
-	rm vhost.conf
+out_file="$server_name.conf"
+
+if [ -f $out_file ]; then
+	rm $out_file
 fi
 
 clear
-echo -e "$vhost" >> vhost.conf
+echo -e "$vhost" >> $out_file
