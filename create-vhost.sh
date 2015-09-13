@@ -1,3 +1,9 @@
+out_dir=$1
+
+if [ -z "$out_dir" ]; then
+	out_dir="."
+fi
+
 script_title="Create a virtual host"
 server_name=""
 doc_root_path=""
@@ -60,7 +66,7 @@ vhost="$vhost\t\tRequire all granted\n"
 vhost="$vhost\t</Directory>\n"
 vhost="$vhost</VirtualHost>"
 
-out_file="$server_name.conf"
+out_file="$out_dir/$server_name.conf"
 
 if [ -f $out_file ]; then
 	rm $out_file
