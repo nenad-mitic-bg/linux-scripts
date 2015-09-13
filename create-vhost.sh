@@ -73,4 +73,4 @@ if [ -f $out_file ]; then
 fi
 
 clear
-echo -e "$vhost" >> $out_file
+printf "$vhost" >> $out_file
